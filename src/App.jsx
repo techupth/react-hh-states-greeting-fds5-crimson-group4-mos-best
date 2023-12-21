@@ -1,13 +1,33 @@
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [greetingMessage, setgreetingMessage] = useState("Greeting Message");
   return (
     <div className="App">
-      <div className="greeting-container">Greeting Message</div>
+      <div className="greeting-container">{greetingMessage}</div>
       <div className="buttons">
-        <button>สวัสดี!</button>
-        <button>Hi!</button>
-        <button>你好!</button>
+        <button
+          onClick={() => {
+            setgreetingMessage("สวัสดี!");
+          }}
+        >
+          สวัสดี!
+        </button>
+        <button
+          onClick={() => {
+            setgreetingMessage("Hi!");
+          }}
+        >
+          Hi!
+        </button>
+        <button
+          onClick={() => {
+            setgreetingMessage("你好!");
+          }}
+        >
+          你好!
+        </button>
       </div>
     </div>
   );
